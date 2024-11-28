@@ -1,0 +1,47 @@
+﻿@model EmployeeManagementAPI.Models.Payrolls
+
+<h2>Edit Payroll</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="PayrollID" /> <!-- Hidden field to store PayrollID -->
+
+    <div class="form-group">
+        <label asp-for="PayrollID" class="control-label"></label>
+        <input asp-for="PayrollID" class="form-control" />
+        <span asp-validation-for="PayrollID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PaymentMethod" class="control-label"></label>
+        <input asp-for="PaymentMethod" class="form-control" />
+        <span asp-validation-for="PaymentMethod" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BankAccount" class="control-label"></label>
+        <input asp-for="BankAccount" class="form-control" />
+        <span asp-validation-for="BankAccount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BankName" class="control-label"></label>
+        <input asp-for="BankName" class="form-control" />
+        <span asp-validation-for="BankName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PayrollDate" class="control-label"></label>
+        <input asp-for="PayrollDate" class="form-control" type="date" />
+        <span asp-validation-for="PayrollDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Amount" class="control-label"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Remarks" class="control-label"></label>
+        <input asp-for="Remarks" class="form-control" />
+        <span asp-validation-for="Remarks" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+

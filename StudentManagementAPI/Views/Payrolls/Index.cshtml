@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EmployeeManagementAPI.Models.Payrolls>
+
+<h2>Payrolls List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Payroll ID</th>
+            <th>Payroll Method</th>
+            <th>Account Number</th>
+            <th>Bank Name</th>
+            <th>Payroll Date</th>
+            <th>Amount</th>
+            <th>Remarks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payroll in Model)
+        {
+            <tr>
+                <td>@payroll.PayrollID</td>
+                <td>@payroll.PaymentMethod</td>
+                <td>@payroll.BankAccount</td>
+                <td>@payroll.BankName</td>
+                <td>@payroll.PayrollDate</td>
+                <td>@payroll.Amount</td>
+                <td>@payroll.Remarks</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@payroll.PayrollID">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@payroll.PayrollID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Add New Payroll</a>
+
